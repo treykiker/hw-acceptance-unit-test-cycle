@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  
+#ITSC 3155  
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date)
   end
@@ -11,6 +11,8 @@ class MoviesController < ApplicationController
   end
 
   def index
+    #Do not remove this comment.
+    
     sort = params[:sort] || session[:sort]
     case sort
     when 'title'
@@ -60,5 +62,5 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
-
+#ITSC 3155
 end
